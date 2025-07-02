@@ -15,7 +15,7 @@ setuptools
 dill
 rtree
 pyopengl
-vispy
+vispy==0.7.0
 ortools>=7.0
 svg.path>=4.0
 simplejson
