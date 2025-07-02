@@ -1535,10 +1535,10 @@ class TransformEditorTool(AppTool):
         """
 
         def bounds_rec(lst):
-            minx = np.Inf
-            miny = np.Inf
-            maxx = -np.Inf
-            maxy = -np.Inf
+            minx = np.inf
+            miny = np.inf
+            maxx = -np.inf
+            maxy = -np.inf
 
             try:
                 for shape in lst:
@@ -1623,10 +1623,10 @@ class DrawToolShape(object):
         # now it can get bounds for nested lists of objects
         def bounds_rec(shape_el):
             if type(shape_el) is list:
-                minx = np.Inf
-                miny = np.Inf
-                maxx = -np.Inf
-                maxy = -np.Inf
+                minx = np.inf
+                miny = np.inf
+                maxx = -np.inf
+                maxy = -np.inf
 
                 for k in shape_el:
                     minx_, miny_, maxx_, maxy_ = bounds_rec(k)
@@ -1898,10 +1898,10 @@ class DrawTool(object):
     def bounds(obj):
         def bounds_rec(o):
             if type(o) is list:
-                minx = np.Inf
-                miny = np.Inf
-                maxx = -np.Inf
-                maxy = -np.Inf
+                minx = np.inf
+                miny = np.inf
+                maxx = -np.inf
+                maxy = -np.inf
 
                 for k in o:
                     try:
@@ -4605,7 +4605,7 @@ class AppGeoEditor(QtCore.QObject):
         """
 
         snap_x, snap_y = (x, y)
-        snap_distance = np.Inf
+        snap_distance = np.inf
 
         # # ## Object (corner?) snap
         # # ## No need for the objects, just the coordinates
@@ -5215,10 +5215,10 @@ def poly2rings(poly):
 
 
 def get_shapely_list_bounds(geometry_list):
-    xmin = np.Inf
-    ymin = np.Inf
-    xmax = -np.Inf
-    ymax = -np.Inf
+    xmin = np.inf
+    ymin = np.inf
+    xmax = -np.inf
+    ymax = -np.inf
 
     for gs in geometry_list:
         try:

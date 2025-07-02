@@ -4,13 +4,40 @@
 # File Author: Dennis Hayrullin                            #
 # Date: 2/5/2016                                           #
 # MIT Licence                                              #
+# modified by Michel Lachaine for update vispy 0.15.2      #
 # ##########################################################
 
+from vispy import scene
+from vispy import visuals
 from vispy.visuals import markers, LineVisual, InfiniteLineVisual
 from vispy.visuals.axis import Ticker, _get_ticks_talbot
 from vispy.scene.widgets import Grid
 import numpy as np
 
+
+class CrossMarkerVisual(visuals.Visual):
+    """Custom Visual: dessine des croix '++'."""
+    def __init__(self, pos, size=10, color='white'):
+        visuals.Visual.__init__(self)
+        self.lines = []
+        for p in pos:
+            # Verticale
+            self.lines.append(visuals.Line(pos=np.array([
+                [p[0], p[1] - size/2],
+                [p[0], p[1] + size/2]
+            ]), color=color, method='gl', width=1))
+            # Horizontale
+            self.lines.append(visuals.Line(pos=np.array([
+                [p[0] - size/2, p[1]],
+                [p[0] + size/2, p[1]]
+            ]), color=color, method='gl', width=1))
+
+    def draw(self, transforms):
+        for line in self.lines:
+            line.draw(transforms)
+
+
+CrossMarker = scene.visuals.create_visual_node(CrossMarkerVisual)
 
 def apply_patches():
     # Patch MarkersVisual to have crossed lines marker
@@ -29,8 +56,12 @@ def apply_patches():
     }
     """
 
-    markers._marker_dict['++'] = cross_lines
-    markers.marker_types = tuple(sorted(list(markers._marker_dict.copy().keys())))
+
+
+
+
+#    markers._marker_dict['++'] = cross_lines
+#    markers.marker_types = tuple(sorted(list(markers._marker_dict.copy().keys())))
 
     # # Add clear_data method to LineVisual to have possibility of clearing data
     # def clear_data(self):
