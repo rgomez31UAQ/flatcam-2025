@@ -20,6 +20,11 @@ sudo apt-get install -y \
 
 
 # Python packages
+# Note: install from a virtual environment
+echo
+echo "*** use pip3 install -r requirements.txt to install the required Python packages from a virtual environment ***"
+echo
+exit 0
 
 sudo -H python3 -m pip install --upgrade \
 	pip \
