@@ -15,7 +15,7 @@ if sys.platform == "win32":
     pass
 
 MIN_VERSION_MAJOR = 3
-MIN_VERSION_MINOR = 5
+MIN_VERSION_MINOR = 12
 
 
 def debug_trace():
@@ -37,12 +37,12 @@ if __name__ == '__main__':
 
     major_v = sys.version_info.major
     minor_v = sys.version_info.minor
-    # Supported Python version is >= 3.5
+    # Supported Python version is >= 3.12
     if major_v >= MIN_VERSION_MAJOR:
         if minor_v >= MIN_VERSION_MINOR:
             pass
         else:
-            print("FlatCAM BETA uses PYTHON 3 or later. The version minimum is %s.%s\n"
+            print("FlatCAM BETA uses PYTHON 3.12 or later. The version minimum is %s.%s\n"
                   "Your Python version is: %s.%s" % (MIN_VERSION_MAJOR, MIN_VERSION_MINOR, str(major_v), str(minor_v)))
 
             if minor_v >= 8:
@@ -50,7 +50,7 @@ if __name__ == '__main__':
             else:
                 sys.exit(0)
     else:
-        print("FlatCAM BETA uses PYTHON 3 or later. The version minimum is %s.%s\n"
+        print("FlatCAM BETA uses PYTHON 3.12 or later. The version minimum is %s.%s\n"
               "Your Python version is: %s.%s" % (MIN_VERSION_MAJOR, MIN_VERSION_MINOR, str(major_v), str(minor_v)))
         sys.exit(0)
 
