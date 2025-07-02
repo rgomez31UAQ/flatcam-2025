@@ -7,6 +7,7 @@ sudo apt-get install -y \
 	libfreetype6-dev \
 	libgeos-dev \
 	libpng-dev \
+	libgdal-dev \
 	libspatialindex-dev \
 	qt5-style-plugins \
 	python3-dev \
