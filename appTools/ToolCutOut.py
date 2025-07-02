@@ -16,7 +16,7 @@ import shapely.affinity as affinity
 
 from matplotlib.backend_bases import KeyEvent as mpl_key_event
 
-from numpy import Inf
+from numpy import inf
 from copy import deepcopy
 import math
 import logging
@@ -1898,10 +1898,10 @@ class CutOut(AppTool):
 
         def bounds_rec(obj):
             try:
-                minx = Inf
-                miny = Inf
-                maxx = -Inf
-                maxy = -Inf
+                minx = inf
+                miny = inf
+                maxx = -inf
+                maxy = -inf
 
                 for k in obj:
                     minx_, miny_, maxx_, maxy_ = bounds_rec(k)

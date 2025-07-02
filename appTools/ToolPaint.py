@@ -22,7 +22,7 @@ from shapely.ops import unary_union, linemerge
 from matplotlib.backend_bases import KeyEvent as mpl_key_event
 
 import numpy as np
-from numpy import Inf
+from numpy import inf
 import traceback
 import sys
 import logging
@@ -2597,10 +2597,10 @@ class ToolPaint(AppTool, Gerber):
     def paint_bounds(geometry):
         def bounds_rec(o):
             if type(o) is list:
-                minx = Inf
-                miny = Inf
-                maxx = -Inf
-                maxy = -Inf
+                minx = inf
+                miny = inf
+                maxx = -inf
+                maxy = -inf
 
                 for k in o:
                     try:
