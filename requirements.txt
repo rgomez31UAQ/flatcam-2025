@@ -1,5 +1,6 @@
 # This file contains python only requirements to be installed with pip
 # Python packages that cannot be installed with pip (e.g. PyQt5, GDAL) are not included.
+# sudo apt install libgdal-dev (ubuntu 24.04)
 # For Windows GDAL wheel can be found here: https://www.lfd.uci.edu/~gohlke/pythonlibs/#gdal
 # Usage: pip3 install -r requirements.txt
 
@@ -27,5 +28,5 @@ ezdxf
 qrcode>=6.1
 reportlab>=3.5
 svglib
-gdal
+gdal==3.8.4
 pyserial>=3.4
