@@ -5,6 +5,7 @@
 # Date: 2/5/2014                                            #
 # MIT Licence                                               #
 # Modified by Marius Stanciu (2019)                         #
+# Modified by Michel Lachaine (2025)                        #
 # ###########################################################
 
 import urllib.request
@@ -165,8 +166,8 @@ class App(QtCore.QObject):
     # ################################### Version and VERSION DATE ##################################################
     # ###############################################################################################################
     # version = "Unstable Version"
-    version = 8.994
-    version_date = "2020/11/7"
+    version = 9.001
+    version_date = "2025/07/02"
     beta = True
 
     engine = '3D'
