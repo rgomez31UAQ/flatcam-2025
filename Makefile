@@ -11,10 +11,10 @@ LOCAL_PATH = $(shell pwd)
 LOCAL_APPS_PATH = ~/.local/share/applications
 ASSEST_PATH = assets/linux
 
-INSTALL_PATH = /usr/share/flatcam-beta
+INSTALL_PATH = /usr/share/flatcam-2025
 APPS_PATH = /usr/share/applications
 
-MIN_PY3_MINOR_VERSION := 5
+MIN_PY3_MINOR_VERSION := 12
 PY3_MINOR_VERSION := $(shell python3 --version | cut -d'.' -f2)
 
 ifneq ($(MIN_PY3_MINOR_VERSION), $(firstword $(sort $(PY3_MINOR_VERSION) $(MIN_PY3_MINOR_VERSION))))
@@ -26,25 +26,25 @@ install:
 ifeq ($(USER_ID), 0)
 	@ echo "Installing it system-wide"
 	cp -rf $(LOCAL_PATH) $(INSTALL_PATH)
-	@ sed -i "s|python_script_path=.*|python_script_path=$(INSTALL_PATH)|g" $(INSTALL_PATH)/assets/linux/flatcam-beta
-	ln -sf $(INSTALL_PATH)/assets/linux/flatcam-beta /usr/local/bin
-	cp -f $(ASSEST_PATH)/flatcam-beta.desktop $(APPS_PATH)
-	@ sed -i "s|Exec=.*|Exec=$(INSTALL_PATH)/$(ASSEST_PATH)/flatcam-beta|g" $(APPS_PATH)/flatcam-beta.desktop
-	@ sed -i "s|Icon=.*|Icon=$(INSTALL_PATH)/$(ASSEST_PATH)/icon.png|g" $(APPS_PATH)/flatcam-beta.desktop
+	@ sed -i "s|python_script_path=.*|python_script_path=$(INSTALL_PATH)|g" $(INSTALL_PATH)/assets/linux/flatcam-2025
+	ln -sf $(INSTALL_PATH)/assets/linux/flatcam-2025 /usr/local/bin
+	cp -f $(ASSEST_PATH)/flatcam-2025.desktop $(APPS_PATH)
+	@ sed -i "s|Exec=.*|Exec=$(INSTALL_PATH)/$(ASSEST_PATH)/flatcam-2025|g" $(APPS_PATH)/flatcam-2025.desktop
+	@ sed -i "s|Icon=.*|Icon=$(INSTALL_PATH)/$(ASSEST_PATH)/icon.png|g" $(APPS_PATH)/flatcam-2025.desktop
 else
 	@ echo "Installing locally for $(USER) only"
-	cp -f $(ASSEST_PATH)/flatcam-beta.desktop $(LOCAL_APPS_PATH)
-	@ sed -i "s|Exec=.*|Exec=$(LOCAL_PATH)/$(ASSEST_PATH)/flatcam-beta|g" $(LOCAL_APPS_PATH)/flatcam-beta.desktop
-	@ sed -i "s|Icon=.*|Icon=$(LOCAL_PATH)/$(ASSEST_PATH)/icon.png|g" $(LOCAL_APPS_PATH)/flatcam-beta.desktop
+	cp -f $(ASSEST_PATH)/flatcam-2025.desktop $(LOCAL_APPS_PATH)
+	@ sed -i "s|Exec=.*|Exec=$(LOCAL_PATH)/$(ASSEST_PATH)/flatcam-2025|g" $(LOCAL_APPS_PATH)/flatcam-2025.desktop
+	@ sed -i "s|Icon=.*|Icon=$(LOCAL_PATH)/$(ASSEST_PATH)/icon.png|g" $(LOCAL_APPS_PATH)/flatcam-2025.desktop
 endif
 
 remove:
 ifeq ($(USER_ID), 0)
 	@ echo "Uninstalling it system-wide"
 	rm -rf $(INSTALL_PATH)
-	rm -f /usr/local/bin/flatcam-beta
-	rm -r $(APPS_PATH)/flatcam-beta.desktop
+	rm -f /usr/local/bin/flatcam-2025
+	rm -r $(APPS_PATH)/flatcam-2025.desktop
 else
 	@ echo "Uninstalling only for $(USER) user"
-	rm -f $(LOCAL_APPS_PATH)/flatcam-beta.desktop
+	rm -f $(LOCAL_APPS_PATH)/flatcam-2025.desktop
 endif
