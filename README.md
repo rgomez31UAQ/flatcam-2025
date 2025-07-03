@@ -1,4 +1,4 @@
-**********************************************************************
+
 FlatCAM-2025 (c)  2025 by Michel Lachaine
 Based on FlatCAM BETA (c) 2019 - by Marius Stanciu
 Based on FlatCAM (c) 2014-2016 - by Juan Pablo Caram
@@ -18,7 +18,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 python3 FlatCAM.py
 
-*********************************************************************
+=====================================================================
 
 FlatCAM BETA (c) 2019 - by Marius Stanciu
 Based on FlatCAM: 
