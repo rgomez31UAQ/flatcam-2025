@@ -7,17 +7,20 @@ The goal is to make this application working on Ubuntu 24.04
 This is work in progress.
 
 To install:
+...
 git clone https://github.com/mikelachaine/flatcam-2025.git
 cd flatcam-2025
 ./setup_ubuntu.sh
 pip3 -m venv ~/flatcam-2025
+...
 
 To run:
+...
 source ~/flatcam-2025/bin/activate
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 python3 FlatCAM.py
-
+...
 =====================================================================
 
 FlatCAM BETA (c) 2019 - by Marius Stanciu
