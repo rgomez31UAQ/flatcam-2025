@@ -1,4 +1,4 @@
-this was work in progress to have it working on ubunt 24.04
+this was work in progress to have it working on ubuntu 24.04
 But I since switched to Manjaro, this is not maintained anymore
 =====================================================================
 
