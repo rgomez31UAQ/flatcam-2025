@@ -1,5 +1,5 @@
 this was work in progress to have it working on ubunt 24.04
-But I since switched to Manjaro, so this is not maintained anymore
+But I since switched to Manjaro, this is not maintained anymore
 
 
 FlatCAM-2025 (c)  2025 by Michel Lachaine
